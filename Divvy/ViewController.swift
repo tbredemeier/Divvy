@@ -64,7 +64,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
             annotation.title = stationName
             annotation.coordinate = location.coordinate
             mapView.addAnnotation(annotation)
-            let station = ["stationName": stationName] as [String: Any]
+            let station = ["stationName": stationName, "availableBikes":
+                availableBikes, "latitude": latitude, "longitude": longitude,
+                                "distance": distance] as [String: Any]
             stations.append(station)
         }
     }
@@ -86,7 +88,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
                                                  for: indexPath)
         let station = stations[indexPath.row]
         cell.textLabel?.text = station["stationName"] as? String
-        return cell
+        let distance = station["distance"] as! Double
+        let availableBikes = station["availableBikes"] as! Int
+        cell.detailTextLabel?.text = String(format: "%d bikes %0.2f miles from here", availableBikes, distance)
+            return cell
     }
 
     @IBAction func onChangedSelector(_ sender: UISegmentedControl) {
