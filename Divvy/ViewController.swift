@@ -69,6 +69,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
                                 "distance": distance] as [String: Any]
             stations.append(station)
         }
+        stations.sort { ($0["distance"]! as! Double) < ($1["distance"]! as! Double) }
     }
 
     func loadError() {
