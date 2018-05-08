@@ -52,7 +52,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             let longitude = result["longitude"].doubleValue
             let location = CLLocation(latitude: latitude,
                                       longitude: longitude)
+            let distance = location.distance(from: myLocation) / 1609.34
+            let availableBikes = result["availableBikes"].intValue
             let annotation = MKPointAnnotation()
+            annotation.subtitle = String(format: "%d bikes\n%0.2f miles from here", availableBikes, distance)
             annotation.title = stationName
             annotation.coordinate = location.coordinate
             mapView.addAnnotation(annotation)
