@@ -10,9 +10,11 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class ViewController: UIViewController, CLLocationManagerDelegate {
+class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var tableView: UITableView!
+    var stations = [[String: Any]]()
     var myLocation = CLLocation()
     let locationManager = CLLocationManager()
     let query = "https://feeds.divvybikes.com/stations/stations.json"
@@ -22,6 +24,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.isHidden = true
     }
 
     override func didReceiveMemoryWarning() {
@@ -59,6 +64,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             annotation.title = stationName
             annotation.coordinate = location.coordinate
             mapView.addAnnotation(annotation)
+            let station = ["stationName": stationName] as [String: Any]
+            stations.append(station)
         }
     }
 
@@ -70,6 +77,27 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         present(alert, animated: true)
     }
 
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return stations.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell",
+                                                 for: indexPath)
+        let station = stations[indexPath.row]
+        cell.textLabel?.text = station["stationName"] as? String
+        return cell
+    }
+
+    @IBAction func onChangedSelector(_ sender: UISegmentedControl) {
+        if sender.selectedSegmentIndex == 0 {
+            tableView.isHidden = true
+        }
+        else {
+            tableView.isHidden = false
+            tableView.reloadData()
+        }
+    }
 
 }
 
