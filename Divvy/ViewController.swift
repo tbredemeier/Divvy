@@ -105,5 +105,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
         }
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let dvc = segue.destination as! DetailViewController
+        let index = tableView.indexPathForSelectedRow?.row
+        dvc.station = stations[index!]
+    }
+
 }
 

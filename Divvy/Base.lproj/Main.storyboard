@@ -48,6 +48,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="1uP-xx-CxH" kind="show" id="agV-Uk-UZd"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -87,6 +90,35 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1076" y="133.5832083958021"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="d9M-91-env">
+            <objects>
+                <viewController id="1uP-xx-CxH" customClass="DetailViewController" customModule="Divvy" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="A3Y-y7-Ro9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GQ1-uW-88v">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="GQ1-uW-88v" firstAttribute="trailing" secondItem="2HS-bh-eIq" secondAttribute="trailing" id="1nu-NB-IC2"/>
+                            <constraint firstItem="GQ1-uW-88v" firstAttribute="leading" secondItem="2HS-bh-eIq" secondAttribute="leading" id="5Ek-ov-ZbZ"/>
+                            <constraint firstItem="GQ1-uW-88v" firstAttribute="bottom" secondItem="2HS-bh-eIq" secondAttribute="bottom" id="TuG-UF-wSJ"/>
+                            <constraint firstItem="GQ1-uW-88v" firstAttribute="top" secondItem="2HS-bh-eIq" secondAttribute="top" id="rB9-bp-1Kv"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="2HS-bh-eIq"/>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="GQ1-uW-88v" id="njZ-8L-FRL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PyR-9y-jHc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1845.5999999999999" y="133.5832083958021"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="d7N-LC-zjR">

@@ -12,6 +12,7 @@
 		AE03510D20A25E9700D57D95 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE03510B20A25E9700D57D95 /* Main.storyboard */; };
 		AE03510F20A25E9900D57D95 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE03510E20A25E9900D57D95 /* Assets.xcassets */; };
 		AE03511220A25E9900D57D95 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE03511020A25E9900D57D95 /* LaunchScreen.storyboard */; };
+		AEA5C5EE20A26B0300DB186A /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA5C5ED20A26B0300DB186A /* DetailViewController.swift */; };
 		AEC7D96D20A261D200392DC5 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC7D96C20A261D200392DC5 /* SwiftyJSON.swift */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +24,7 @@
 		AE03510E20A25E9900D57D95 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AE03511120A25E9900D57D95 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AE03511320A25E9900D57D95 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AEA5C5ED20A26B0300DB186A /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		AEC7D96C20A261D200392DC5 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -58,6 +60,7 @@
 			children = (
 				AE03510720A25E9700D57D95 /* AppDelegate.swift */,
 				AE03510920A25E9700D57D95 /* ViewController.swift */,
+				AEA5C5ED20A26B0300DB186A /* DetailViewController.swift */,
 				AE03510B20A25E9700D57D95 /* Main.storyboard */,
 				AE03510E20A25E9900D57D95 /* Assets.xcassets */,
 				AE03511020A25E9900D57D95 /* LaunchScreen.storyboard */,
@@ -141,6 +144,7 @@
 				AEC7D96D20A261D200392DC5 /* SwiftyJSON.swift in Sources */,
 				AE03510A20A25E9700D57D95 /* ViewController.swift in Sources */,
 				AE03510820A25E9700D57D95 /* AppDelegate.swift in Sources */,
+				AEA5C5EE20A26B0300DB186A /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
